@@ -7,424 +7,643 @@ public class storyenglish {
                 System.out.print(">> ");
                 String playerName = scanner.nextLine();
 
+                System.out.println("\n\033[1;35m=== LOSTLY MEMORIES: A Journey Through Time ===\033[0m");
                 System.out.println("\n\033[1;32mHello, " + playerName
-                                + ". You wake up in a dark forest with no memory of who you are.\033[0m");
+                                + ". You find an old, dusty package on your doorstep with no return address.\033[0m");
                 System.out.println(
-                                "\033[1;32mIn front of you, there are two paths: one is a misty trail, the other is an old stone bridge.\033[0m");
-                System.out.println("\033[1;33mWhich path do you choose?\033[0m (1: Misty Trail / 2: Stone Bridge)");
+                                "\033[1;32mInside is an antique music box and a faded letter that reads:\033[0m");
+                System.out.println(
+                                "\033[1;33m'The memories you've lost await you. Wind the music box when you're ready to remember.'\033[0m");
+                System.out.println("\033[1;32mYour hands tremble as you hold the delicate mechanism.\033[0m");
+                System.out.println("\033[1;33mWhat do you choose?\033[0m");
+                System.out.println("1: Wind the music box immediately");
+                System.out.println("2: Read the letter more carefully first");
+                System.out.println("3: Put everything away for now");
 
                 System.out.print(">> ");
                 int choice = scanner.nextInt();
                 scanner.nextLine();
 
                 if (choice == 1) {
-                        mistyPathEnglish(scanner);
+                        musicBoxScene(scanner, playerName);
                 } else if (choice == 2) {
-                        stoneBridgeEnglish(scanner);
+                        letterScene(scanner, playerName);
+                } else if (choice == 3) {
+                        delayScene(scanner, playerName);
                 } else {
-                        System.out.println("\033[1;31mInvalid choice. The shadows consume you...\033[0m");
+                        System.out.println(
+                                        "\033[1;31mInvalid choice. You hesitate too long and the moment passes...\033[0m");
+                        delayScene(scanner, playerName);
                 }
         }
 
-        public static void mistyPathEnglish(Scanner scanner) {
+        public static void letterScene(Scanner scanner, String playerName) {
+                System.out.println("\n\033[1;36m=== Hidden Messages ===\033[0m");
                 System.out.println(
-                                "\033[1;32mYou walk along the misty trail, barely able to see your surroundings.\033[0m");
+                                "\033[1;32mAs you examine the letter under better light, you notice faint writing in the margins.\033[0m");
                 System.out.println(
-                                "\033[1;32mSuddenly, an old cabin appears before you. Do you want to enter?\033[0m (1: Yes / 2: No)");
+                                "\033[1;32mIt appears to be written in a different hand:\033[0m");
+                System.out.println(
+                                "\033[1;33m'Remember the lighthouse by the sea, where we made our promise under the stars.'\033[0m");
+                System.out.println(
+                                "\033[1;32mThe paper smells of salt and old roses. Your heart begins to race with a strange familiarity.\033[0m");
+                System.out.println("\033[1;33mWhat do you choose?\033[0m");
+                System.out.println("1: Wind the music box now");
+                System.out.println("2: Try to remember the lighthouse");
+                System.out.println("3: Search for more clues in the package");
 
                 System.out.print(">> ");
                 int choice = scanner.nextInt();
+                scanner.nextLine();
 
                 if (choice == 1) {
-                        System.out.println(
-                                        "\033[1;32mYou step inside the cabin and find an ancient book. As you open it, memories start flooding back...\033[0m");
-                        System.out.println(
-                                        "\033[1;32mThe book describes a hidden temple in the heart of the forest. Do you follow the clues?\033[0m (1: Yes / 2: No)");
-                        System.out.print(">> ");
-                        choice = scanner.nextInt();
-
-                        if (choice == 1) {
-                                System.out.println(
-                                                "\033[1;32mYou journey deeper into the forest, encountering strange symbols and ruins.\033[0m");
-                                System.out.println(
-                                                "\033[1;32mYou find the temple, but a shadowy guardian blocks the entrance.\033[0m");
-                                System.out.println(
-                                                "\033[1;33mDo you challenge the guardian or attempt to sneak past?\033[0m (1: Challenge / 2: Sneak)");
-                                System.out.print(">> ");
-                                choice = scanner.nextInt();
-
-                                if (choice == 1) {
-                                        System.out.println(
-                                                        "\033[1;32mYou fight bravely and defeat the guardian. Inside the temple, you find a glowing altar.\033[0m");
-                                        System.out.println(
-                                                        "\033[1;32mSuddenly, a mysterious spirit appears before you with ancient eyes full of wisdom.\033[0m");
-                                        System.out.println(
-                                                        "\033[1;33m'To unlock the secrets of your past, you must prove your strategic mind,' the spirit says.\033[0m");
-                                        System.out.println(
-                                                        "\033[1;33m'Choose your challenge: A game of wits (Tic-Tac-Toe) or a test of luck (Rock-Paper-Scissors)?'\033[0m");
-                                        System.out.println("(1: Tic-Tac-Toe / 2: Rock-Paper-Scissors)");
-                                        System.out.print(">> ");
-                                        choice = scanner.nextInt();
-                                        scanner.nextLine();
-
-                                        boolean puzzleSolved = false;
-                                        if (choice == 1) {
-                                                puzzleSolved = playTicTacToeWithSpirit(scanner);
-                                        } else if (choice == 2) {
-                                                puzzleSolved = playRockPaperScissorsWithSpirit(scanner);
-                                        } else {
-                                                System.out.println(
-                                                                "\033[1;31mThe spirit disapproves of your indecision and vanishes...\033[0m");
-                                                System.out.println("\033[1;31mGame Over.\033[0m");
-                                                return;
-                                        }
-
-                                        if (puzzleSolved) {
-                                                System.out.println(
-                                                                "\033[1;32mThe spirit nods approvingly and reveals pictures of your family and writings about your identity.\033[0m");
-                                                System.out.println(
-                                                                "\033[1;33m'Your mind is sharp. Now, what will you do with this knowledge?'\033[0m (1: Follow the clues / 2: Reject the past)");
-                                                System.out.print(">> ");
-                                                choice = scanner.nextInt();
-                                                if (choice == 1) {
-                                                        System.out.println(
-                                                                        "\033[1;32mThe clues lead you to an island where you find your lost memories and identity. The spirit's blessing guides you home!\033[0m");
-                                                        System.out.println("\033[1;32mYou win!\033[0m");
-                                                } else {
-                                                        System.out.println(
-                                                                        "\033[1;31mYou reject your past and the temple begins to crumble. The shadows consume you...\033[0m");
-                                                        System.out.println("\033[1;31mGame Over.\033[0m");
-                                                }
-                                        } else {
-                                                System.out.println(
-                                                                "\033[1;31mThe spirit shakes its head in disappointment and fades away, taking the secrets with it...\033[0m");
-                                                System.out.println("\033[1;31mGame Over.\033[0m");
-                                        }
-                                } else {
-                                        System.out.println(
-                                                        "\033[1;31mYou try to sneak in but fail. The guardian banishes you to the shadows...\033[0m");
-                                        System.out.println("\033[1;31mGame Over.\033[0m");
-                                }
-                        } else {
-                                System.out.println(
-                                                "\033[1;31mYou ignore the clues and leave the cabin. The shadows eventually find you...\033[0m");
-                                System.out.println("\033[1;31mGame Over.\033[0m");
-                        }
+                        musicBoxScene(scanner, playerName);
+                } else if (choice == 2) {
+                        lighthouseMemoryScene(scanner, playerName);
+                } else if (choice == 3) {
+                        searchPackageScene(scanner, playerName);
                 } else {
-                        System.out.println(
-                                        "\033[1;31mYou decide not to enter and move away. However, the shadows consume you...\033[0m");
-                        System.out.println("\033[1;31mGame Over.\033[0m");
+                        System.out.println("\033[1;31mYour hands shake with uncertainty...\033[0m");
+                        musicBoxScene(scanner, playerName);
                 }
         }
 
-        public static void stoneBridgeEnglish(Scanner scanner) {
-                System.out
-                                .println("\033[1;32mAs you cross the old stone bridge, a shadowy figure appears in the middle.\033[0m");
+        public static void delayScene(Scanner scanner, String playerName) {
+                System.out.println("\n\033[1;36m=== Restless Night ===\033[0m");
                 System.out.println(
-                                "\033[1;32mThe figure asks you who you are. If you answer incorrectly, the bridge will collapse.\033[0m");
+                                "\033[1;32mYou try to sleep, but the music box calls to you from the other room.\033[0m");
                 System.out.println(
-                                "\033[1;33mWhat is your answer?\033[0m (1: The Unknown Wanderer / 2: Shadow Hunter)");
+                                "\033[1;32mStrange dreams fill your mind - flashes of a woman with auburn hair laughing by the ocean,\033[0m");
+                System.out.println(
+                                "\033[1;32ma ring being placed on your finger, promises whispered in the moonlight.\033[0m");
+                System.out.println(
+                                "\033[1;32mYou wake at 3 AM, unable to resist any longer.\033[0m");
+                System.out.println("\033[1;33mWhat do you choose?\033[0m");
+                System.out.println("1: Go wind the music box");
+                System.out.println("2: Write down what you remember from the dreams");
+                System.out.println("3: Call someone to talk about this");
 
                 System.out.print(">> ");
                 int choice = scanner.nextInt();
+                scanner.nextLine();
 
                 if (choice == 1) {
-                        System.out.println(
-                                        "\033[1;32mThe shadow nods as if recognizing you and vanishes. You safely cross the bridge and find a forgotten village.\033[0m");
-                        System.out.println(
-                                        "\033[1;32mThe villagers seem to know you. They take you to an elder who reveals your past.\033[0m");
-                        System.out.println(
-                                        "\033[1;33mDo you stay to learn more or continue your journey?\033[0m (1: Stay / 2: Continue)");
-                        System.out.print(">> ");
-                        choice = scanner.nextInt();
-
-                        if (choice == 1) {
-                                System.out.println(
-                                                "\033[1;32mThe elder reveals you are the lost guardian of the Shadow Realm! With these abilities, what will you do?\033[0m (1: Protect / 2: Destroy)");
-                                System.out.print(">> ");
-                                choice = scanner.nextInt();
-                                if (choice == 1) {
-                                        System.out.println(
-                                                        "\033[1;32mYou protect the village and the people are grateful. You find your lost identity and become a true hero!\033[0m");
-                                        System.out.println("\033[1;32mYou win!\033[0m");
-                                } else {
-                                        System.out.println(
-                                                        "\033[1;31mYou destroy the village and the shadows consume you. You are lost forever...\033[0m");
-                                        System.out.println("\033[1;31mGame Over.\033[0m");
-                                }
-                        } else {
-                                System.out.println(
-                                                "\033[1;31mYou continue your journey but the truth remains a mystery. You live in the shadows forever...\033[0m");
-                                System.out.println("\033[1;31mGame Over.\033[0m");
-                        }
+                        musicBoxScene(scanner, playerName);
+                } else if (choice == 2) {
+                        dreamJournalScene(scanner, playerName);
+                } else if (choice == 3) {
+                        phoneCallScene(scanner, playerName);
                 } else {
-                        System.out.println(
-                                        "\033[1;31mThe shadow perceives you as a threat and shatters the bridge! You fall into the abyss...\033[0m");
-                        System.out.println("\033[1;31mGame Over.\033[0m");
+                        System.out.println("\033[1;31mYou toss and turn, unable to find peace...\033[0m");
+                        musicBoxScene(scanner, playerName);
                 }
         }
 
-        public static boolean playTicTacToeWithSpirit(Scanner scanner) {
+        public static void searchPackageScene(Scanner scanner, String playerName) {
+                System.out.println("\n\033[1;36m=== Hidden Compartment ===\033[0m");
                 System.out.println(
-                                "\033[1;35mThe spirit conjures a mystical Tic-Tac-Toe board made of light and shadow...\033[0m");
-
-                char[][] board = {
-                                { ' ', ' ', ' ' },
-                                { ' ', ' ', ' ' },
-                                { ' ', ' ', ' ' }
-                };
-
-                char playerSymbol = 'X';
-                char spiritSymbol = 'O';
-                boolean gameWon = false;
-                boolean playerTurn = true;
-
-                while (!gameWon && !isBoardFull(board)) {
-                        displayBoard(board);
-
-                        if (playerTurn) {
-                                playerMove(board, playerSymbol, scanner);
-                                gameWon = checkWinner(board, playerSymbol);
-                                if (gameWon) {
-                                        displayBoard(board);
-                                        System.out.println("\033[1;32mYou have outwitted the spirit!\033[0m");
-                                        return true;
-                                }
-                        } else {
-                                spiritMove(board, spiritSymbol);
-                                System.out.println("\033[1;35mThe spirit makes its move...\033[0m");
-                                gameWon = checkWinner(board, spiritSymbol);
-                                if (gameWon) {
-                                        displayBoard(board);
-                                        System.out.println("\033[1;31mThe spirit has defeated you...\033[0m");
-                                        return false;
-                                }
-                        }
-
-                        if (isBoardFull(board)) {
-                                displayBoard(board);
-                                System.out.println("\033[1;33mIt's a draw! The spirit appreciates your effort.\033[0m");
-                                return true;
-                        }
-
-                        playerTurn = !playerTurn;
-                }
-                return false;
-        }
-
-        public static boolean playRockPaperScissorsWithSpirit(Scanner scanner) {
-                System.out.println("\033[1;35mThe spirit challenges you to a game of Rock-Paper-Scissors!\033[0m");
+                                "\033[1;32mFeeling around the package, you discover a hidden compartment.\033[0m");
                 System.out.println(
-                                "\033[1;35m'Best of 3 rounds will determine the winner,' the spirit declares.\033[0m");
+                                "\033[1;32mInside, you find a small brass key and a photograph of yourself with a woman you don't recognize,\033[0m");
+                System.out.println("\033[1;32mstanding in front of a lighthouse.\033[0m");
                 System.out.println(
-                                "\033[1;35m'The spirit can analyze your previous moves to develop strategy...' it whispers.\033[0m");
+                                "\033[1;33mOn the back, someone has written: 'Our Wedding Day - June 15th' but the year is smudged.\033[0m");
+                System.out.println(
+                                "\033[1;32mThe woman's eyes seem to stare directly at you, full of love and sadness.\033[0m");
+                System.out.println("\033[1;33mWhat do you choose?\033[0m");
+                System.out.println("1: Wind the music box with the key");
+                System.out.println("2: Study the photograph more closely");
+                System.out.println("3: Try to remember this woman");
 
-                String[] choices = { "Rock", "Paper", "Scissors" };
-                java.util.List<String> playerPreviousMoves = new java.util.ArrayList<>();
-                int playerWins = 0;
-                int spiritWins = 0;
-                int round = 1;
+                System.out.print(">> ");
+                int choice = scanner.nextInt();
+                scanner.nextLine();
 
-                while (playerWins < 2 && spiritWins < 2) {
-                        System.out.println("\n\033[1;33mRound " + round + ":\033[0m");
-                        System.out.print("Enter your choice (Rock(r), Paper(p), Scissors(s)): ");
-                        String playerChoice = scanner.nextLine().toLowerCase();
-
-                        String playerMove = "";
-                        switch (playerChoice) {
-                                case "r":
-                                case "rock":
-                                        playerMove = "Rock";
-                                        break;
-                                case "p":
-                                case "paper":
-                                        playerMove = "Paper";
-                                        break;
-                                case "s":
-                                case "scissors":
-                                        playerMove = "Scissors";
-                                        break;
-                                default:
-                                        System.out.println("Invalid choice, spirit chooses for you...");
-                                        playerMove = choices[(int) (Math.random() * 3)];
-                        }
-
-                        // Spirit makes strategic move
-                        String spiritMove = spiritStrategicMove(playerPreviousMoves, choices);
-                        playerPreviousMoves.add(playerMove);
-
-                        System.out.println("Your choice: " + playerMove);
-                        System.out.println("Spirit's choice: " + spiritMove);
-
-                        if (playerMove.equals(spiritMove)) {
-                                System.out.println("\033[1;33mTie! No one wins this round.\033[0m");
-                        } else if ((playerMove.equals("Rock") && spiritMove.equals("Scissors")) ||
-                                        (playerMove.equals("Paper") && spiritMove.equals("Rock")) ||
-                                        (playerMove.equals("Scissors") && spiritMove.equals("Paper"))) {
-                                System.out.println("\033[1;32mYou win this round!\033[0m");
-                                playerWins++;
-                        } else {
-                                System.out.println("\033[1;31mThe spirit wins this round!\033[0m");
-                                spiritWins++;
-                        }
-
-                        System.out.println("Score - You: " + playerWins + " | Spirit: " + spiritWins);
-                        round++;
-                }
-
-                if (playerWins > spiritWins) {
-                        System.out.println(
-                                        "\033[1;32mCongratulations! You have defeated the spirit in battle of chance!\033[0m");
-                        return true;
+                if (choice == 1) {
+                        deeperMemoryScene(scanner, playerName);
+                } else if (choice == 2) {
+                        photographScene(scanner, playerName);
+                } else if (choice == 3) {
+                        rememberWomanScene(scanner, playerName);
                 } else {
-                        System.out.println("\033[1;31mThe spirit has proven superior in the game of chance...\033[0m");
-                        return false;
+                        System.out.println("\033[1;31mThe photograph slips from your trembling hands...\033[0m");
+                        photographScene(scanner, playerName);
                 }
         }
 
-        private static void displayBoard(char[][] board) {
-                System.out.println("\033[1;36mr/c 1   2   3\033[0m");
-                System.out.println("  -------------");
-                for (int i = 0; i < 3; i++) {
-                        System.out.print((i + 1) + " | ");
-                        for (int j = 0; j < 3; j++) {
-                                System.out.print(board[i][j] + " | ");
-                        }
-                        System.out.println("\n  -------------");
+        public static void musicBoxScene(Scanner scanner, String playerName) {
+                System.out.println("\n\033[1;36m=== First Memory ===\033[0m");
+                System.out.println(
+                                "\033[1;32mAs the music box plays its haunting melody, the world around you begins to shimmer and fade.\033[0m");
+                System.out.println(
+                                "\033[1;32mYou find yourself standing on a cliff overlooking the ocean.\033[0m");
+                System.out.println(
+                                "\033[1;32mA woman with auburn hair approaches you, her white dress flowing in the sea breeze.\033[0m");
+                System.out.println(
+                                "\033[1;33m'You came back to me,' she whispers, tears in her eyes. 'I've been waiting so long, "
+                                                + playerName + ".'\033[0m");
+                System.out.println("\033[1;32mThe name feels foreign yet familiar on your lips.\033[0m");
+                System.out.println("\033[1;33mWhat do you choose?\033[0m");
+                System.out.println("1: Ask her who she is");
+                System.out.println("2: Tell her you don't remember");
+                System.out.println("3: Embrace her without questions");
+
+                System.out.print(">> ");
+                int choice = scanner.nextInt();
+                scanner.nextLine();
+
+                if (choice == 1) {
+                        elenaIntroScene(scanner, playerName);
+                } else if (choice == 2) {
+                        confessionScene(scanner, playerName);
+                } else if (choice == 3) {
+                        embraceScene(scanner, playerName);
+                } else {
+                        System.out.println("\033[1;31mYou stand frozen, overwhelmed by emotions...\033[0m");
+                        confessionScene(scanner, playerName);
                 }
         }
 
-        private static boolean checkWinner(char[][] board, char player) {
-                for (int i = 0; i < 3; i++) {
-                        if ((board[i][0] == player && board[i][1] == player && board[i][2] == player) ||
-                                        (board[0][i] == player && board[1][i] == player && board[2][i] == player)) {
-                                return true;
-                        }
-                }
-                if ((board[0][0] == player && board[1][1] == player && board[2][2] == player) ||
-                                (board[0][2] == player && board[1][1] == player && board[2][0] == player)) {
-                        return true;
-                }
-                return false;
-        }
+        public static void deeperMemoryScene(Scanner scanner, String playerName) {
+                System.out.println("\n\033[1;36m=== Deeper Memory ===\033[0m");
+                System.out.println(
+                                "\033[1;32mThe brass key unlocks a different melody from the music box.\033[0m");
+                System.out.println("\033[1;32mThis time, the vision is clearer.\033[0m");
+                System.out.println(
+                                "\033[1;32mYou're in a small cottage by the sea, and the woman - Elena - is showing you a positive pregnancy test.\033[0m");
+                System.out.println(
+                                "\033[1;32mHer face is radiant with joy, but there's also fear in her eyes.\033[0m");
+                System.out.println(
+                                "\033[1;33m'Everything will change now,' she says. 'Promise me you'll never forget this moment, no matter what happens.'\033[0m");
+                System.out.println("\033[1;33mWhat do you choose?\033[0m");
+                System.out.println("1: Promise her you'll remember");
+                System.out.println("2: Ask what she's afraid of");
+                System.out.println("3: Hold her close");
 
-        private static boolean isBoardFull(char[][] board) {
-                for (int i = 0; i < 3; i++) {
-                        for (int j = 0; j < 3; j++) {
-                                if (board[i][j] == ' ') {
-                                        return false;
-                                }
-                        }
-                }
-                return true;
-        }
+                System.out.print(">> ");
+                int choice = scanner.nextInt();
+                scanner.nextLine();
 
-        private static void playerMove(char[][] board, char player, Scanner scanner) {
-                int row, col;
-                while (true) {
-                        System.out.print("Enter row (1-3) and column (1-3): ");
-                        row = scanner.nextInt() - 1;
-                        col = scanner.nextInt() - 1;
-                        scanner.nextLine(); // Clear buffer
-
-                        if (row >= 0 && row < 3 && col >= 0 && col < 3 && board[row][col] == ' ') {
-                                board[row][col] = player;
-                                break;
-                        } else {
-                                System.out.println("Invalid move. Try again.");
-                        }
+                if (choice == 1) {
+                        promiseScene(scanner, playerName);
+                } else if (choice == 2) {
+                        fearScene(scanner, playerName);
+                } else if (choice == 3) {
+                        comfortScene(scanner, playerName);
+                } else {
+                        System.out.println("\033[1;31mThe memory fades as your emotions overwhelm you...\033[0m");
+                        comfortScene(scanner, playerName);
                 }
         }
 
-        private static void spiritMove(char[][] board, char spirit) {
-                // Simple AI: Try to win, then block player, then random
-                if (makeWinningMove(board, spirit) || makeBlockingMove(board, spirit)
-                                || makeRandomMove(board, spirit)) {
-                        return;
+        public static void elenaIntroScene(Scanner scanner, String playerName) {
+                System.out.println("\n\033[1;36m=== Lost Love ===\033[0m");
+                System.out.println("\033[1;32mElena's face crumbles with pain.\033[0m");
+                System.out.println(
+                                "\033[1;33m'I'm Elena, your wife. We were married for three years before the accident.'\033[0m");
+                System.out.println(
+                                "\033[1;33m'You hit your head so hard... the doctors said you might never remember us, but I kept hoping.'\033[0m");
+                System.out.println(
+                                "\033[1;32mShe shows you a wedding ring that matches the tan line on your finger.\033[0m");
+                System.out.println(
+                                "\033[1;33m'I've been sending you these packages for months, hoping something would bring you back.'\033[0m");
+                System.out.println("\033[1;33mWhat do you choose?\033[0m");
+                System.out.println("1: Ask about the accident");
+                System.out.println("2: Ask about your life together");
+                System.out.println("3: Ask why she didn't visit you");
+
+                System.out.print(">> ");
+                int choice = scanner.nextInt();
+                scanner.nextLine();
+
+                if (choice == 1) {
+                        accidentScene(scanner, playerName);
+                } else if (choice == 2) {
+                        lifeTogetherScene(scanner, playerName);
+                } else if (choice == 3) {
+                        visitQuestionScene(scanner, playerName);
+                } else {
+                        System.out.println("\033[1;31mThe weight of this revelation overwhelms you...\033[0m");
+                        accidentScene(scanner, playerName);
                 }
         }
 
-        private static boolean makeWinningMove(char[][] board, char spirit) {
-                for (int i = 0; i < 3; i++) {
-                        for (int j = 0; j < 3; j++) {
-                                if (board[i][j] == ' ') {
-                                        board[i][j] = spirit;
-                                        if (checkWinner(board, spirit)) {
-                                                return true;
-                                        }
-                                        board[i][j] = ' ';
-                                }
-                        }
+        public static void confessionScene(Scanner scanner, String playerName) {
+                System.out.println("\n\033[1;36m=== The Truth Revealed ===\033[0m");
+                System.out.println("\033[1;32mElena nods sadly.\033[0m");
+                System.out.println(
+                                "\033[1;33m'I know you don't. The car accident took that from us.'\033[0m");
+                System.out.println(
+                                "\033[1;33m'But " + playerName + ", there's something else you need to know.'\033[0m");
+                System.out.println(
+                                "\033[1;33m'We had a daughter, Sophie. She's five now, and she asks about her daddy every day.'\033[0m");
+                System.out.println(
+                                "\033[1;32mHer voice breaks as she pulls out a small photo of a little girl with your eyes and her mother's smile.\033[0m");
+                System.out.println(
+                                "\033[1;33m'I've been showing her pictures, telling her stories, hoping that someday...'\033[0m");
+                System.out.println("\033[1;33mWhat do you choose?\033[0m");
+                System.out.println("1: Ask to meet Sophie");
+                System.out.println("2: Ask about the accident in detail");
+                System.out.println("3: Ask if there's any hope of remembering");
+
+                System.out.print(">> ");
+                int choice = scanner.nextInt();
+                scanner.nextLine();
+
+                if (choice == 1) {
+                        sophieScene(scanner, playerName);
+                } else if (choice == 2) {
+                        accidentDetailScene(scanner, playerName);
+                } else if (choice == 3) {
+                        hopeScene(scanner, playerName);
+                } else {
+                        System.out.println("\033[1;31mYour heart breaks as the truth sinks in...\033[0m");
+                        sophieScene(scanner, playerName);
                 }
-                return false;
         }
 
-        private static boolean makeBlockingMove(char[][] board, char spirit) {
-                char player = (spirit == 'O') ? 'X' : 'O';
-                for (int i = 0; i < 3; i++) {
-                        for (int j = 0; j < 3; j++) {
-                                if (board[i][j] == ' ') {
-                                        board[i][j] = player;
-                                        if (checkWinner(board, player)) {
-                                                board[i][j] = spirit;
-                                                return true;
-                                        }
-                                        board[i][j] = ' ';
-                                }
-                        }
+        public static void embraceScene(Scanner scanner, String playerName) {
+                System.out.println("\n\033[1;36m=== Familiar Warmth ===\033[0m");
+                System.out.println(
+                                "\033[1;32mAs you hold Elena, fragments of memories begin flooding back.\033[0m");
+                System.out.println(
+                                "\033[1;32mHer laugh, the way she hummed while cooking, lazy Sunday mornings in bed, building a crib together.\033[0m");
+                System.out.println(
+                                "\033[1;32mBut they're like pieces of a puzzle with most parts missing.\033[0m");
+                System.out.println(
+                                "\033[1;33m'I can feel something,' you whisper. 'But it's like looking through fog.'\033[0m");
+                System.out.println(
+                                "\033[1;32mElena pulls back to look at you, hope shining in her eyes.\033[0m");
+                System.out.println("\033[1;33mWhat do you choose?\033[0m");
+                System.out.println("1: Try to remember more");
+                System.out.println("2: Ask her to help you remember");
+                System.out.println("3: Tell her about the confusion you feel");
+
+                System.out.print(">> ");
+                int choice = scanner.nextInt();
+                scanner.nextLine();
+
+                if (choice == 1) {
+                        rememberMoreScene(scanner, playerName);
+                } else if (choice == 2) {
+                        helpRememberScene(scanner, playerName);
+                } else if (choice == 3) {
+                        confusionScene(scanner, playerName);
+                } else {
+                        System.out.println("\033[1;31mThe emotions become too overwhelming...\033[0m");
+                        confusionScene(scanner, playerName);
                 }
-                return false;
         }
 
-        private static boolean makeRandomMove(char[][] board, char spirit) {
-                java.util.List<int[]> availableMoves = new java.util.ArrayList<>();
-                for (int i = 0; i < 3; i++) {
-                        for (int j = 0; j < 3; j++) {
-                                if (board[i][j] == ' ') {
-                                        availableMoves.add(new int[] { i, j });
-                                }
-                        }
+        public static void hopeScene(Scanner scanner, String playerName) {
+                System.out.println("\n\033[1;36m=== Medical Reality ===\033[0m");
+                System.out.println("\033[1;32mElena pulls out a folder of medical documents.\033[0m");
+                System.out.println(
+                                "\033[1;33m'Dr. Martinez says there's still a chance. The brain can heal in mysterious ways, sometimes years later.'\033[0m");
+                System.out.println(
+                                "\033[1;33m'But " + playerName + ", I can't keep waiting forever.'\033[0m");
+                System.out.println(
+                                "\033[1;33m'Sophie needs stability, and I... I've been offered a job in Portland.'\033[0m");
+                System.out.println(
+                                "\033[1;33m'Better pay, better schools. But it would mean leaving everything we built here.'\033[0m");
+                System.out.println("\033[1;33mWhat do you choose?\033[0m");
+                System.out.println("1: Ask her not to leave");
+                System.out.println("2: Tell her to do what's best for Sophie");
+                System.out.println("3: Suggest trying therapy together first");
+
+                System.out.print(">> ");
+                int choice = scanner.nextInt();
+                scanner.nextLine();
+
+                if (choice == 1) {
+                        pleadingScene(scanner, playerName);
+                } else if (choice == 2) {
+                        sacrificeScene(scanner, playerName);
+                } else if (choice == 3) {
+                        therapyScene(scanner, playerName);
+                } else {
+                        System.out.println("\033[1;31mThe weight of the decision paralyzes you...\033[0m");
+                        therapyScene(scanner, playerName);
                 }
-                if (!availableMoves.isEmpty()) {
-                        int[] move = availableMoves.get((int) (Math.random() * availableMoves.size()));
-                        board[move[0]][move[1]] = spirit;
-                        return true;
-                }
-                return false;
         }
 
-        // Strategic Rock-Paper-Scissors AI for the spirit
-        private static String spiritStrategicMove(java.util.List<String> playerPreviousMoves, String[] choices) {
-                // If not enough data yet, choose randomly
-                if (playerPreviousMoves.size() < 2) {
-                        return choices[(int) (Math.random() * 3)];
-                }
+        public static void therapyScene(Scanner scanner, String playerName) {
+                System.out.println("\n\033[1;36m=== A New Beginning ===\033[0m");
+                System.out.println(
+                                "\033[1;32mOver the following months, you attend therapy sessions together.\033[0m");
+                System.out.println("\033[1;32mSome days are harder than others.\033[0m");
+                System.out.println(
+                                "\033[1;32mYou learn about your old life through photos, videos, and Elena's patient storytelling.\033[0m");
+                System.out.println(
+                                "\033[1;32mSlowly, you begin to fall in love with Elena again - not remembering the old love, but discovering a new one.\033[0m");
+                System.out.println(
+                                "\033[1;32mSophie starts visiting, cautiously at first, then with growing comfort.\033[0m");
+                System.out.println("\033[1;33mWhat do you choose?\033[0m");
+                System.out.println("1: Continue building new memories");
+                System.out.println("2: Focus on being the father Sophie needs");
+                System.out.println("3: Pursue experimental memory treatment");
 
-                // Find the player's most frequently used move
-                java.util.Map<String, Integer> moveFrequency = new java.util.HashMap<>();
-                for (String move : playerPreviousMoves) {
-                        moveFrequency.put(move, moveFrequency.getOrDefault(move, 0) + 1);
-                }
+                System.out.print(">> ");
+                int choice = scanner.nextInt();
+                scanner.nextLine();
 
-                String mostUsedMove = "";
-                int maxFrequency = 0;
-                for (java.util.Map.Entry<String, Integer> entry : moveFrequency.entrySet()) {
-                        if (entry.getValue() > maxFrequency) {
-                                maxFrequency = entry.getValue();
-                                mostUsedMove = entry.getKey();
-                        }
+                if (choice == 1) {
+                        newMemoriesScene(scanner, playerName);
+                } else if (choice == 2) {
+                        fatherhoodScene(scanner, playerName);
+                } else if (choice == 3) {
+                        treatmentScene(scanner, playerName);
+                } else {
+                        System.out.println("\033[1;31mYou choose to let time guide your path...\033[0m");
+                        newMemoriesScene(scanner, playerName);
                 }
+        }
 
-                // Choose the move that beats the player's most used move
-                switch (mostUsedMove) {
-                        case "Rock":
-                                return "Paper"; // Paper beats Rock
-                        case "Paper":
-                                return "Scissors"; // Scissors beats Paper
-                        case "Scissors":
-                                return "Rock"; // Rock beats Scissors
-                        default:
-                                return choices[(int) (Math.random() * 3)];
+        public static void newMemoriesScene(Scanner scanner, String playerName) {
+                System.out.println("\n\033[1;36m=== Second Chances ===\033[0m");
+                System.out.println(
+                                "\033[1;32mA year later, you're at the lighthouse again, but this time with Sophie on your shoulders and Elena's hand in yours.\033[0m");
+                System.out.println(
+                                "\033[1;32mThe memories of your past life remain elusive, but the present is filled with new joy.\033[0m");
+                System.out.println(
+                                "\033[1;32mSophie shows you the shells she's collected, and Elena reads the same Neruda poems that brought you together the first time.\033[0m");
+                System.out.println(
+                                "\033[1;33mMaybe some love stories get a second chapter.\033[0m");
+                System.out.println("\033[1;33mWhat do you choose?\033[0m");
+                System.out.println("1: Propose to Elena again");
+                System.out.println("2: Decide to move away for a fresh start");
+                System.out.println("3: Stay and build your new life here");
+
+                System.out.print(">> ");
+                int choice = scanner.nextInt();
+                scanner.nextLine();
+
+                if (choice == 1) {
+                        proposalAgainScene(scanner, playerName);
+                } else if (choice == 2) {
+                        freshStartScene(scanner, playerName);
+                } else if (choice == 3) {
+                        stayAndBuildScene(scanner, playerName);
+                } else {
+                        System.out.println("\033[1;31mYou let the moment guide your heart...\033[0m");
+                        proposalAgainScene(scanner, playerName);
                 }
+        }
+
+        public static void proposalAgainScene(Scanner scanner, String playerName) {
+                System.out.println("\n\033[1;36m=== Love Renewed ===\033[0m");
+                System.out.println(
+                                "\033[1;32mAt the same lighthouse where you first proposed, you get down on one knee again.\033[0m");
+                System.out.println(
+                                "\033[1;32mBut this time, Sophie helps, holding a ring pop and giggling.\033[0m");
+                System.out.println(
+                                "\033[1;33m'Elena, I may not remember loving you before, but I choose to love you now and every day forward.'\033[0m");
+                System.out.println("\033[1;33m'Will you marry me again?'\033[0m");
+                System.out.println(
+                                "\033[1;32mThrough tears of joy, she says yes. Some love transcends memory.\033[0m");
+                System.out.println("\033[1;33mWhat do you choose?\033[0m");
+                System.out.println("1: Start planning your new wedding");
+                System.out.println("2: Have a quiet ceremony with just Sophie");
+
+                System.out.print(">> ");
+                int choice = scanner.nextInt();
+                scanner.nextLine();
+
+                if (choice == 1) {
+                        wedding2Scene(scanner, playerName);
+                } else if (choice == 2) {
+                        quietWeddingScene(scanner, playerName);
+                } else {
+                        System.out.println("\033[1;31mYou choose to let love decide...\033[0m");
+                        quietWeddingScene(scanner, playerName);
+                }
+        }
+
+        public static void wedding2Scene(Scanner scanner, String playerName) {
+                System.out.println("\n\033[1;36m=== Full Circle ===\033[0m");
+                System.out.println(
+                                "\033[1;32mYour second wedding is different but beautiful.\033[0m");
+                System.out.println(
+                                "\033[1;32mFriends you don't remember stand beside new friends you've made.\033[0m");
+                System.out.println(
+                                "\033[1;32mSophie is your flower girl, beaming with pride.\033[0m");
+                System.out.println(
+                                "\033[1;32mAs you dance with Elena to the same song that played at your first wedding,\033[0m");
+                System.out.println(
+                                "\033[1;32myou don't remember the steps, but somehow your body knows them.\033[0m");
+                System.out.println("\033[1;33mLove finds a way.\033[0m");
+                System.out.println(
+                                "\n\033[1;35mENDING: You built a new life from the ashes of forgotten memories.\033[0m");
+                System.out.println(
+                                "\033[1;35mSometimes the greatest love stories are about falling in love with the same person twice.\033[0m");
+                System.out.println("\n\033[1;32mThank you for playing, " + playerName + "!\033[0m");
+        }
+
+        public static void quietWeddingScene(Scanner scanner, String playerName) {
+                System.out.println("\n\033[1;36m=== Family First ===\033[0m");
+                System.out.println(
+                                "\033[1;32mYou have a small ceremony in your backyard, just the three of you and an officiant.\033[0m");
+                System.out.println(
+                                "\033[1;32mSophie wears a flower crown she made herself and declares herself the 'best daughter' instead of best man.\033[0m");
+                System.out.println("\033[1;32mIt's perfect in its simplicity.\033[0m");
+                System.out.println(
+                                "\033[1;32mAs you kiss Elena, Sophie cheers and throws flower petals everywhere.\033[0m");
+                System.out.println(
+                                "\n\033[1;35mENDING: In choosing a quiet celebration, you discovered that the most important moments\033[0m");
+                System.out.println(
+                                "\033[1;35mare the ones shared with those you love most.\033[0m");
+                System.out.println("\n\033[1;32mThank you for playing, " + playerName + "!\033[0m");
+        }
+
+        public static void freshStartScene(Scanner scanner, String playerName) {
+                System.out.println("\n\033[1;36m=== New Horizons ===\033[0m");
+                System.out.println(
+                                "\033[1;32mYou decide to move to Portland together, leaving the weight of forgotten memories behind.\033[0m");
+                System.out.println(
+                                "\033[1;32mSophie is excited about her new school, and Elena has taken the job offer.\033[0m");
+                System.out.println(
+                                "\033[1;32mAs you pack the music box carefully in tissue paper, you realize some treasures are worth keeping,\033[0m");
+                System.out.println("\033[1;32meven if you don't remember why they're precious.\033[0m");
+                System.out.println(
+                                "\n\033[1;35mENDING: Sometimes moving forward means leaving the past behind.\033[0m");
+                System.out.println(
+                                "\033[1;35mYou created a new family story in a new place, proving that love can bloom anywhere.\033[0m");
+                System.out.println("\n\033[1;32mThank you for playing, " + playerName + "!\033[0m");
+        }
+
+        public static void stayAndBuildScene(Scanner scanner, String playerName) {
+                System.out.println("\n\033[1;36m=== Roots Run Deep ===\033[0m");
+                System.out.println(
+                                "\033[1;32mYou choose to stay in the town where your love story began.\033[0m");
+                System.out.println(
+                                "\033[1;32mYou take over the small bookstore where you and Elena first met,\033[0m");
+                System.out.println("\033[1;32mand it becomes a gathering place for the community.\033[0m");
+                System.out.println(
+                                "\033[1;32mSophie helps you organize the children's section, and Elena starts a poetry reading group.\033[0m");
+                System.out.println("\033[1;32mThe lighthouse remains your special place.\033[0m");
+                System.out.println(
+                                "\n\033[1;35mENDING: By staying where your story began, you honored both your past and present.\033[0m");
+                System.out.println(
+                                "\033[1;35mThe bookstore became a symbol of second chances and enduring love.\033[0m");
+                System.out.println("\n\033[1;32mThank you for playing, " + playerName + "!\033[0m");
+        }
+
+        // Additional scenes for completeness
+        public static void lighthouseMemoryScene(Scanner scanner, String playerName) {
+                System.out.println("\n\033[1;36m=== Lighthouse Memories ===\033[0m");
+                System.out.println(
+                                "\033[1;32mYou close your eyes and try to remember the lighthouse.\033[0m");
+                System.out.println(
+                                "\033[1;32mFragments come to you: the sound of waves, a woman's laughter, the feeling of sand between your toes.\033[0m");
+                System.out.println(
+                                "\033[1;32mBut the harder you try to grasp these memories, the more they slip away like water through your fingers.\033[0m");
+                System.out.println("\033[1;33mFrustrated, you decide to wind the music box after all.\033[0m");
+                musicBoxScene(scanner, playerName);
+        }
+
+        public static void dreamJournalScene(Scanner scanner, String playerName) {
+                System.out.println("\n\033[1;36m=== Dream Journal ===\033[0m");
+                System.out.println(
+                                "\033[1;32mYou write down everything you can remember from the dreams.\033[0m");
+                System.out.println(
+                                "\033[1;32mThe woman's face, the ring, the feeling of happiness mixed with loss.\033[0m");
+                System.out.println(
+                                "\033[1;32mAs you write, more details surface: a small child's laughter, the smell of coffee in the morning,\033[0m");
+                System.out.println("\033[1;32ma lullaby hummed softly.\033[0m");
+                System.out.println(
+                                "\033[1;33mThe journal entries only make you more curious about the music box.\033[0m");
+                musicBoxScene(scanner, playerName);
+        }
+
+        public static void phoneCallScene(Scanner scanner, String playerName) {
+                System.out.println("\n\033[1;36m=== Late Night Call ===\033[0m");
+                System.out.println(
+                                "\033[1;32mYou pick up the phone, but realize you don't know who to call.\033[0m");
+                System.out.println(
+                                "\033[1;32mYour phone contacts seem foreign, like they belong to someone else's life.\033[0m");
+                System.out.println(
+                                "\033[1;32mThe loneliness overwhelms you, and you put the phone down.\033[0m");
+                System.out.println(
+                                "\033[1;33mThe music box seems like your only connection to answers.\033[0m");
+                musicBoxScene(scanner, playerName);
+        }
+
+        public static void photographScene(Scanner scanner, String playerName) {
+                System.out.println("\n\033[1;36m=== Studying the Past ===\033[0m");
+                System.out.println(
+                                "\033[1;32mYou study every detail of the photograph.\033[0m");
+                System.out.println(
+                                "\033[1;32mThe lighthouse in the background, the way the woman's hand rests on your chest,\033[0m");
+                System.out.println("\033[1;32mthe genuine happiness in both your faces.\033[0m");
+                System.out.println(
+                                "\033[1;32mThis was clearly a moment of pure joy, but it feels like looking at strangers.\033[0m");
+                System.out.println("\033[1;33mYou need answers, and the music box holds the key.\033[0m");
+                deeperMemoryScene(scanner, playerName);
+        }
+
+        public static void rememberWomanScene(Scanner scanner, String playerName) {
+                System.out.println("\n\033[1;36m=== Trying to Remember ===\033[0m");
+                System.out.println(
+                                "\033[1;32mYou stare at the woman's face, willing yourself to remember.\033[0m");
+                System.out.println(
+                                "\033[1;32mThere's something about her eyes, something familiar, but it's like trying to catch smoke.\033[0m");
+                System.out.println(
+                                "\033[1;32mThe harder you concentrate, the more your head begins to ache.\033[0m");
+                System.out.println(
+                                "\033[1;33mPerhaps the music box will unlock what your mind cannot.\033[0m");
+                deeperMemoryScene(scanner, playerName);
+        }
+
+        // Placeholder methods for completeness - these would lead to similar branching
+        // paths
+        public static void promiseScene(Scanner scanner, String playerName) {
+                System.out.println(
+                                "\n\033[1;32mYou promise Elena you'll remember, feeling the weight of that commitment.\033[0m");
+                confessionScene(scanner, playerName);
+        }
+
+        public static void fearScene(Scanner scanner, String playerName) {
+                System.out.println("\n\033[1;32mElena explains her fears about the future and raising a child.\033[0m");
+                confessionScene(scanner, playerName);
+        }
+
+        public static void comfortScene(Scanner scanner, String playerName) {
+                System.out.println(
+                                "\n\033[1;32mYou hold Elena close, feeling a deep connection despite the lost memories.\033[0m");
+                confessionScene(scanner, playerName);
+        }
+
+        public static void accidentScene(Scanner scanner, String playerName) {
+                System.out.println(
+                                "\n\033[1;32mElena tells you about the car accident that changed everything.\033[0m");
+                hopeScene(scanner, playerName);
+        }
+
+        public static void lifeTogetherScene(Scanner scanner, String playerName) {
+                System.out.println(
+                                "\n\033[1;32mElena shares beautiful memories of your life together - how you met, your first date, your wedding.\033[0m");
+                confessionScene(scanner, playerName);
+        }
+
+        public static void visitQuestionScene(Scanner scanner, String playerName) {
+                System.out.println(
+                                "\n\033[1;32mElena explains why she stayed away - it was too painful to see you not recognize her.\033[0m");
+                confessionScene(scanner, playerName);
+        }
+
+        public static void sophieScene(Scanner scanner, String playerName) {
+                System.out.println(
+                                "\n\033[1;32mElena tells you more about Sophie and how much she misses her father.\033[0m");
+                hopeScene(scanner, playerName);
+        }
+
+        public static void accidentDetailScene(Scanner scanner, String playerName) {
+                System.out.println(
+                                "\n\033[1;32mElena provides painful details about the accident and your recovery.\033[0m");
+                hopeScene(scanner, playerName);
+        }
+
+        public static void rememberMoreScene(Scanner scanner, String playerName) {
+                System.out.println("\n\033[1;32mYou focus intently, and more memory fragments surface.\033[0m");
+                helpRememberScene(scanner, playerName);
+        }
+
+        public static void helpRememberScene(Scanner scanner, String playerName) {
+                System.out.println("\n\033[1;32mElena agrees to help you rebuild your memories together.\033[0m");
+                therapyScene(scanner, playerName);
+        }
+
+        public static void confusionScene(Scanner scanner, String playerName) {
+                System.out.println(
+                                "\n\033[1;32mYou express your confusion and Elena understands your struggle.\033[0m");
+                therapyScene(scanner, playerName);
+        }
+
+        public static void pleadingScene(Scanner scanner, String playerName) {
+                System.out.println(
+                                "\n\033[1;32mYou plead with Elena to stay and give your relationship another chance.\033[0m");
+                therapyScene(scanner, playerName);
+        }
+
+        public static void sacrificeScene(Scanner scanner, String playerName) {
+                System.out.println(
+                                "\n\033[1;32mYou tell Elena to do what's best for Sophie, even if it means leaving you behind.\033[0m");
+                System.out.println(
+                                "\n\033[1;35mENDING: Your selfless love allows Elena and Sophie to build a new life.\033[0m");
+                System.out.println(
+                                "\033[1;35mSometimes love means letting go.\033[0m");
+                System.out.println("\n\033[1;32mThank you for playing, " + playerName + "!\033[0m");
+        }
+
+        public static void fatherhoodScene(Scanner scanner, String playerName) {
+                System.out.println(
+                                "\n\033[1;32mYou dedicate yourself to being the father Sophie deserves, building new memories together.\033[0m");
+                newMemoriesScene(scanner, playerName);
+        }
+
+        public static void treatmentScene(Scanner scanner, String playerName) {
+                System.out.println(
+                                "\n\033[1;32mYou pursue experimental treatment, but ultimately realize that new love is just as valuable as remembered love.\033[0m");
+                newMemoriesScene(scanner, playerName);
         }
 }
