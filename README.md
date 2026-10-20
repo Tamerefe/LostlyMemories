@@ -1,13 +1,17 @@
 # Lostly Memories 🌟
 
-A text-based adventure game where you wake up in a mysterious dark forest with no memory of who you are. Navigate through different paths, make choices, and discover your fate in this immersive storytelling experience.
+A text-based adventure game about lost memories. A dusty package arrives at your door holding an antique music box and a faded letter. Wind the box, follow the fragments of a life you can't remember, and decide what kind of future you want to build.
 
 ## 🎮 Features
 
 - **Bilingual Support**: Play in English or Turkish (İngilizce veya Türkçe)
 - **Interactive Storytelling**: Make choices that affect your journey
 - **Multiple Paths**: Different story branches based on your decisions
-- **Mini-Games**: Includes Rock, Paper, Scissors challenges
+- **Mini-Games**: Hum back the music box melody from memory, and play Rock, Paper, Scissors with Sophie
+- **Memory Journal**: Collect up to 10 memory fragments; type `j` (or `g` in Turkish) at any choice to view them
+- **Bonds**: Your choices strengthen your bond with Elena and Sophie
+- **7 Endings + Endings Gallery**: Discovered endings are saved between runs and shown from the main menu
+- **Hidden True Ending**: Recover 5 memory fragments in one playthrough to hear the music box's last song
 - **Colorful Console Output**: Enhanced visual experience with colored text
 - **Memory Mystery**: Uncover the secrets of your lost memories
 
@@ -46,15 +50,19 @@ A text-based adventure game where you wake up in a mysterious dark forest with n
 - `storyenglish.java` - English version of the adventure story
 - `storyturkish.java` - Turkish version of the adventure story
 - `rockpaperscissors.java` - Mini-game implementation
-- `T_3xt.java` - Additional text utilities
+- `gamestate.java` - Memory fragments, bonds, safe input, endings gallery
+- `minigames.java` - Melody puzzle and Rock, Paper, Scissors with Sophie
+- `T_3xt.java` - Standalone Tic-Tac-Toe
 
 ## 🎲 Gameplay
 
 1. **Character Creation**: Enter your name to begin your journey
-2. **Path Selection**: Choose between different paths (Misty Trail or Stone Bridge)
-3. **Decision Making**: Make choices that will determine your fate
-4. **Mini-Games**: Engage in Rock, Paper, Scissors challenges
-5. **Story Discovery**: Uncover the mystery of your lost memories
+2. **The Package**: Wind the music box, study the letter, or put it away and see where the night takes you
+3. **Decision Making**: Make choices that shape your bond with Elena and Sophie and decide your fate
+4. **Mini-Games**: Remember the music box melody and challenge Sophie to Rock, Paper, Scissors
+5. **Story Discovery**: Collect memory fragments and uncover what really happened on the rainy night
+
+**Controls:** type the number of a choice, `j` / `g` for the memory journal, `q` to quit.
 
 ## 🌍 Language Support
 
@@ -106,7 +114,6 @@ To add new features or modify the game:
 ## 🐛 Known Issues
 
 - Some terminals may not fully support ANSI color codes
-- Input validation could be enhanced for better user experience
 
 ## 🔮 Future Plans
 
@@ -115,7 +122,7 @@ To add new features or modify the game:
 - [ ] Sound effects integration
 - [ ] GUI version
 - [ ] Multiplayer support
-- [ ] Achievement system
+- [x] Achievement system (endings gallery)
 
 ## 📞 Support
 
